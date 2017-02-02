@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="clouds">
+	<div class="cloud x1"></div>
+	<!-- Time for multiple clouds to dance around -->
+	<div class="cloud x2"></div>
+	<div class="cloud x3"></div>
+	<div class="cloud x4"></div>
+	<div class="cloud x5"></div>
+
+
+	<div class="container content">
+		<h1>Local Weather</h1>
+		<hr>
+		<div id="location"></div><!-- /location -->
+		<div id="time"></div>
+
+		<div id="icon"></div><!--- /icon -->
+		<div id="status"></div><!-- /status -->
+		<div class="row">
+			<div class="col-xs-6" id="temperature"></div><!-- /temperature -->
+			<div class="col-xs-6"><button class="switch btn btn-default" id="switch">° C</button></div>
+		</div>
+		
+		
+
+	</div><!-- /content -->
+</div><!-- /cloud -->
+<!-- SCRIPT -->
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
