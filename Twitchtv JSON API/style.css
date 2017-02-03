@@ -1,0 +1,77 @@
+/* colors:
+twitch purple: rgb(100, 65, 164);
+darker twitch purple: rgb(44, 38, 64);
+*/
+
+body {
+	font-family: 'Oswald', sans-serif;
+	background: rgb(44, 38, 64);
+}
+
+a {
+	color: rgb(100, 65, 164);
+}
+
+a:hover {
+	text-decoration: none;
+	color: rgb(44, 38, 64);
+}
+
+#content {
+	margin: 10em auto;
+	width: 33.3%;
+}
+
+#head {
+	font-family: 'Oswald', sans-serif;
+	background: rgb(100, 65, 164);
+	color: #efefef;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: .2em 1em;
+}
+
+#head .fa-twitch {
+	float: right; 
+}
+
+#body {
+	background: #ddd;
+	overflow: hidden;
+}
+
+.logo {
+	max-width: 40px;
+	max-width: 40px;
+	padding: 0 15px 0 5px;
+}
+
+.online {
+	background: #efefef;
+	overflow: hidden;
+	padding: 2%;
+	border-bottom: 1px solid #ddd;
+}
+
+.offline {
+	padding: 1.2% 1.2% 1.2% 3%;
+	-webkit-box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+}
+
+.offline a {
+	color: #555;
+}
+
+#streaming {
+	color: green;
+}
+
+.hidden-xs {
+	color: #2e2e2e;
+}
+
+.offline #streaming {
+	color: #777;
+}
