@@ -1,0 +1,92 @@
+body {
+	background-color: #7ec1c9;
+	color: #efefef;
+	text-align: center;
+	font-family: 'Source Sans Pro', serif;
+}
+
+.content {
+	margin-top: 5%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	color: #298590;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 2%;
+}
+
+.input-group {
+	width: 75%;
+	margin: 0 auto;
+}
+
+#query, #rnd, #query-btn {
+	outline: none;
+	border: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+#query-btn {
+	background: #d24845;
+	color: #efefef;
+	border: 1px solid #d24845;
+}
+
+#rnd {
+	background: #298590;
+	color: #efefef;
+	border-radius: 0;
+	border: 1px solid #298590;
+}
+
+#brainiac {
+	background-image: url('brain.png');
+	background-repeat: no-repeat;
+	background-attachment: top;
+	background-position: center top;
+	background-size: contain;
+	height: 500px;
+	margin-top: 2%;
+}
+
+footer {
+	text-align: center;
+	bottom: 1vh;
+	z-index: 2;
+	margin-top: 9%;
+}
+
+footer a {
+	color: #298590;
+}
+
+#results {
+	margin-top: 5%;
+}
+
+.box {
+	background: #efefef;
+	color: #202020;
+	max-width: 965px;
+	width: 75%;
+	box-shadow: 2px 2px 3px rgba(0,0,0,.3);
+	padding-top: 1%;
+	margin-top: 1%;
+}
+
+.box a {
+	text-transform: uppercase;
+	color: #d24845;
+	font-size: 1.6em;
+}
+
+.box:hover {
+	border-left: 4px solid #d24845;
+}
