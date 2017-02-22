@@ -1,72 +1,80 @@
-
-$( document ).ready(function() {
-	// variables
-    var result = "0"; 
-    var prevEntry = "0"; 
-    var currEntry = "0"; 
+$(document).ready(function() {
+    var result = $("#input"); 
+    var prevEntry = ""; 
+    var currEntry = ""; 
     var operation = null;
-    var btnPressed = "";
+    var key = "";
+
+    // todo: chained calculations
+    // Entf = C
+    // Berechnung durch currEntry=key beim Op fehlerhaft. 
+  	// [object] im input-Feld bei Pageload
+
 
     // update input field
     updateInput(result);
     // event listeners
     	// click
-   	    $(".btn").on("click", function (e) {
-        	window.btnPressed = e.key || String.fromCharCode(e.keyCode);
-        	console.log(window.btnPressed);
-        	return window.btnPressed;
+   	    $(".btn").on("click", function () {
+        	// key = $(this).attr('data-key'); // data-key method with html data- declaration
+        	key = $(this).html(); // html method 
+        	inputMath();
 		})
     	// keypress
-   	    $("#calculator").on("keypress", function () {
-    	    window.btnPressed = $(this).html();
-    	    console.log(window.btnPressed);
-    	    return window.btnPressed;
+   	    $(document).on("keypress", function (e) {
+		    key = e.key || String.fromCharCode(e.keyCode);
+    	    inputMath();
 		});
 
+
+// functions
+	function inputMath () {
 		// run calculation
-	    if (btnPressed === "C") {
+	    if (key === "C") {
 	    	result = 0; 
 	    	currEntry = "0";
-	    } else if (btnPressed === ".") {
+	    } else if (key === ".") {
 	    	currEntry += ".";
-	    } else if (isNum(btnPressed)) {
-	    	if(currEntry === "0") currEntry = btnPressed;
-	    	else currEntry = currEntry + btnPressed;
-	    } else if (isOp(btnPressed)) {
+	    } else if (isNum(key)) {
+	    	if(currEntry === "0") currEntry = key;
+	    	else currEntry = currEntry + key;
+	    } else if (isOp(key)) {
 	    	prevEntry = parseFloat(currEntry);
-	    	operation = btnPressed;
-	    	currEntry = ''; 
-	    } else if (btnPressed === "=" || "Enter") {
+	    	operation = key;
+	    	currEntry = ''; // war vorher currEntry = key; Berechnungen fehlerhaft, aber Anzeige des Op vorhanden. 
+	    } else if (key === "=" || "Enter") {
 	    	currEntry = operate(prevEntry, currEntry, operation); 
 	    	operation = null; 
 	    } else {
 	    	console.log("error!");
 	    }
 	    updateInput(currEntry);
-});
+	};
+		
+	function updateInput (inputValue){
+		var inputValue = inputValue.toString();
+		$('#input').html(inputValue.substring(0, 10));
+	};
+
+	function isNum (value) {
+		return !isNaN(value);
+	};
+
+	function isOp (value) {
+		return value === '/' || value === '*' || value === '+' || value === '-';
+	};
+
+	function operate (a, b, operation) {
+		a = parseFloat(a);
+		b = parseFloat(b);
+		console.log(a, operation, b);
+		if (operation === '+') return a + b;
+		if (operation === '-') return a - b;
+		if (operation === '*') return a * b;
+		if (operation === '/') return a / b;
+	};
+
+	}); /* document rdy */
 
 
-// functions
-updateInput = function(inputValue){
-	var inputValue = inputValue.toString();
-	$('#input').html(inputValue.substring(0, 10));
-};
-
-isNum = function(value) {
-	return !isNaN(value);
-};
-
-isOp = function(value) {
-	return value === '/' || value === '*' || value === '+' || value === '-';
-};
-
-operate = function(a, b, operation) {
-	a = parseFloat(a);
-	b = parseFloat(b);
-	console.log(a, b, operation);
-	if (operation === '+') return a + b;
-	if (operation === '-') return a - b;
-	if (operation === '*') return a * b;
-	if (operation === '/') return a / b;
-};
 
